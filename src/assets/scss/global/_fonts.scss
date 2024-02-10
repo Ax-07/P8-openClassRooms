@@ -65,6 +65,7 @@
         font-size: 18px;
         color: #ffffff;
     }
+
     &__content {
         font-size: 18px;
         font-weight: 400;
@@ -78,13 +79,15 @@
         font-size: 288px;
         font-weight: 700;
     }
+
     &__text {
         color: #FF6060;
         font-size: 36px;
-        &-sm {
-            color: #FF6060;
-            font-size: 18px;
-            }
+    }
+
+    &__link {
+        color: #FF6060;
+        font-size: 18px;
     }
 }
 
@@ -92,6 +95,7 @@
     .navBar__link {
         font-size: 12px;
     }
+
     .hero-banner {
         &__title {
             font-size: 24px;
@@ -99,34 +103,52 @@
             text-align: left;
         }
     }
+
     .footer__copyright {
         font-size: 12px;
     }
+
     .dropDown {
         &__title {
             font-size: 13px;
         }
+
         &__content {
             font-size: 12px;
         }
     }
+
     .logement {
 
         &__title {
             font-size: 18px;
         }
-    
+
         &__location {
             font-size: 14px;
         }
     }
+
     .host__name {
         font-size: 12px;
         text-align: right;
-    
+
         color: $color-primary;
     }
+
     .tags__item {
         font-size: 10px;
+    }
+
+    .error-404 {
+        &__title {
+            font-size: 96px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+        &__link {
+            font-size: 14px;
+        }
     }
 }
