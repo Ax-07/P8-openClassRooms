@@ -5,7 +5,7 @@ import icon from "../assets/images/icon.svg";
 
 export const Footer = () => {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="footer__logo">
                 <img className="footer__logo-K" src={lettreK} alt="lettre K" />
                 <img className="footer__logo-icon" src={icon} alt="lettre A" />
@@ -13,6 +13,6 @@ export const Footer = () => {
                 <img className="footer__logo-A" src={lettreA} alt="lettre A" />
             </div>
             <div className="footer__copyright">© 2020 Kasa. All rights reserved</div>
-        </div>
+        </footer>
     );
 };
