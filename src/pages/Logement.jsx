@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { LogementsContext } from "../contexts/logementsContext.jsx";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Carrousel } from "../components/Carrousel.jsx";
 import { Tags } from "../components/Tags.jsx";
 import { Host } from "../components/Host.jsx";
@@ -9,12 +9,17 @@ import { DropDown } from "../components/DropDown.jsx";
 
 export const Logement = () => {
   const logementId = useParams();
+  const navigate = useNavigate();
   console.log(logementId);
   const logements = useContext(LogementsContext);
   console.log(logements);
-  const logement = logements.filter((logement) => {
-    if (logement.id === logementId.id) return logement;
-  })[0];
+  const logement = logements?.find((logement) => logement.id === logementId.id);
+
+  useEffect(() => {
+    if (!logement) {
+      navigate("/404");
+    }
+  }, [logement, navigate]);
   console.log("logement: ", logement);
 
   return (
