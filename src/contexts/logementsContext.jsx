@@ -17,7 +17,6 @@ export const LogementsProvider = ({ children }) => {
                 console.log(err);
             });
     }, []);
-    console.log(logements);
     return (
         <LogementsContext.Provider value={logements}>
             {children}
