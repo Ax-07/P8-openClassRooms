@@ -10,9 +10,8 @@ import { DropDown } from "../components/DropDown.jsx";
 export const Logement = () => {
   const logementId = useParams();
   const navigate = useNavigate();
-  console.log(logementId);
   const logements = useContext(LogementsContext);
-  console.log(logements);
+  
   const logement = logements?.find((logement) => logement.id === logementId.id);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ export const Logement = () => {
       navigate("/404");
     }
   }, [logement, navigate]);
-  console.log("logement: ", logement);
 
   return (
     <div className="logement">

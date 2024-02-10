@@ -16,6 +16,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Logement/:id" element={<Logement />} />
           <Route path="*" element={<Error_404 />} />
+          <Route path="/404" element={<Error_404 />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
