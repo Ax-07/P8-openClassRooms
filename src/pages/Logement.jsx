@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Navigate, useLocation } from "react-router-dom";
 import { LogementsContext } from "../contexts/logementsContext.jsx";
 import { useContext, useEffect } from "react";
 import { Carrousel } from "../components/Carrousel.jsx";
@@ -9,16 +9,18 @@ import { DropDown } from "../components/DropDown.jsx";
 
 export const Logement = () => {
   const logementId = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const location = useLocation(); console.log(location);
+  const url = window.location.protocol + "//" + window.location.host + location.pathname; console.log(url);
   const logements = useContext(LogementsContext);
   
   const logement = logements?.find((logement) => logement.id === logementId.id);
 
-  useEffect(() => {
-    if (!logement) {
-      navigate("/404");
-    }
-  }, [logement, navigate]);
+  // useEffect(() => {
+  //   if (!logement) {
+  //     navigate("/404");
+  //   }
+  // }, [logement, navigate]);
 
   return (
     <div className="logement">
@@ -51,7 +53,7 @@ export const Logement = () => {
           </div>
         </>
       ) : (
-        <p>Loading...</p>
+        <Navigate to="/404" />
       )}
     </div>
   );
